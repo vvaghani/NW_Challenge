@@ -8,7 +8,7 @@ import Error from "./Components/ErrorHandling";
 import axios from "axios";
 
 const api = {
-  key: "65a5af7262f0df77c2546f3008862ed3",
+  key: process.env.REACT_APP_API_KEY,
   base: "https://api.openweathermap.org/data/2.5/weather?q=",
 };
 
