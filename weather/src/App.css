@@ -1,9 +1,23 @@
 .App {
   text-align: center;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.App-Cold {
+  background-image: url("./Assets/snowyDay.jpg");
+}
+.App-Hot {
+  background-image: url("./Assets/sunnyDay.jpg");
+}
+.App-Normal {
+  background-image: url("./Assets/normalDay.jpg");
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 15vmin;
   pointer-events: none;
 }
 
@@ -24,10 +38,6 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,23 +45,4 @@
   to {
     transform: rotate(360deg);
   }
-}
-
-main {
-  flex-grow: 1;
-  text-align: center;
-  padding: 25px;
-}
-footer {
-  padding: 2px;
-  min-height: 100px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background: #EEEEEE;
-  font-size: small;
-  text-align: center;
-}
-header {
-  padding: 25px;
 }
