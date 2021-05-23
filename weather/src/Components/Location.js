@@ -1,5 +1,6 @@
 import React from 'react';
 
+/* Having the location being searched displayed */
 const Location = (props) => {
     return (
         <div>

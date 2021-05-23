@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import "./App.css";
 import Header from "./Components/Header";
-import Inputs from "./Components/InputField";
+import InputField from "./Components/InputField";
 import Location from "./Components/Location";
 import Display from "./Components/Display";
 import Error from "./Components/ErrorHandling";
@@ -9,6 +9,7 @@ import axios from "axios";
 
 const apiKey = process.env.REACT_APP_WEATHER_API_KEY
 const apiUrl = "https://api.openweathermap.org/data/2.5/weather?q="
+
 
 class App extends Component {
   state = {
@@ -21,6 +22,7 @@ class App extends Component {
     error: true,
   };
 
+  /* Having the temperature round up to integer */
   roundTemp = (temp) => {
     return Math.floor(temp);
   };
@@ -31,6 +33,7 @@ class App extends Component {
     });
   };
 
+  /* Changing the background as per the degree */
   selectBackground = (temp, error) => {
     return temp < 16 && error === false
       ? "App App-Cold"
@@ -41,12 +44,16 @@ class App extends Component {
       : "App";
   };
 
+  /* Getting the weather from the api when required information is entered */
   getWeather = () => {
     const { city, country } = this.state;
+    
     axios
       .get(`${apiUrl}${city},${country}&units=imperial&appid=${apiKey}`)
       .then((response) => {
         const data = response.data;
+        
+        /* Update the information as per the search */
         this.setState({
           city: data.name,
           country: data.sys.country,
@@ -62,12 +69,16 @@ class App extends Component {
       });
   };
 
+  /* Returns all the information */
   render() {
     const { city, country, temp, min, max, description, error } = this.state;
+    
     return (
       <div className={this.selectBackground(temp, error)}>
         <Header />
-        <Inputs
+        
+        {/* If entered incorrect city display the error message otherwise display the results */}
+        <InputField
           handleChange={this.onChangeData}
           loadWeather={this.getWeather}
         />

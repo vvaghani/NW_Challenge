@@ -1,6 +1,7 @@
 import React from 'react';
 import { Typography } from "@material-ui/core";
 
+/* Displaying the data using props */
 const Display = (props) => {
     return (
         <div>

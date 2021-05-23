@@ -1,6 +1,7 @@
 import React from 'react';
 import Alert from "@material-ui/lab/Alert";
 
+/* Material UI component for displaying an alert */
 const Error = () => {
     return (
         <div>

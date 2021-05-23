@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { AppBar, Toolbar, IconButton, Typography } from "@material-ui/core";
 import "../CSS/Header.css"
 
+/* Using react hooks to apply styles */
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1
@@ -12,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
+/* Header design for the application */
 export default function DenseAppBar() {
     const classes = useStyles();
   
@@ -27,7 +29,6 @@ export default function DenseAppBar() {
                     <Typography variant="h6" color="inherit">
                         Weather Application
                     </Typography>
-            
                 </Toolbar>
             </AppBar>
         </div>
