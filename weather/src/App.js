@@ -27,6 +27,7 @@ class App extends Component {
     return Math.floor(temp);
   };
 
+  /* Handles user input in real time */
   onChangeData = (input) => (e) => {
     this.setState({
       [input]: e.target.value,
