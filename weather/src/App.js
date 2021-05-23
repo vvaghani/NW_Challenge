@@ -7,10 +7,8 @@ import Display from "./Components/Display";
 import Error from "./Components/ErrorHandling";
 import axios from "axios";
 
-const api = {
-  key: process.env.REACT_APP_API_KEY,
-  base: "https://api.openweathermap.org/data/2.5/weather?q=",
-};
+const apiKey = process.env.REACT_APP_WEATHER_API_KEY
+const apiUrl = "https://api.openweathermap.org/data/2.5/weather?q="
 
 class App extends Component {
   state = {
@@ -46,7 +44,7 @@ class App extends Component {
   getWeather = () => {
     const { city, country } = this.state;
     axios
-      .get(`${api.base}${city},${country}&units=imperial&appid=${api.key}`)
+      .get(`${apiUrl}${city},${country}&units=imperial&appid=${apiKey}`)
       .then((response) => {
         const data = response.data;
         this.setState({
